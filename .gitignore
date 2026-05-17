@@ -1,0 +1,27 @@
+# Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+.eggs/
+dist/
+build/
+
+# App data (jangan upload ke GitHub)
+uploads/
+vectorstore/
+.streamlit/secrets.toml
+
+# Virtual environment
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
