@@ -6,6 +6,15 @@ Aplikasi chatbot berbasis **Retrieval-Augmented Generation (RAG)** yang memungki
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red)
 ![LangChain](https://img.shields.io/badge/LangChain-0.1+-green)
 ![Groq](https://img.shields.io/badge/LLM-Groq%20(Free)-orange)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://devin-novansyah16-rag-chatbot-pdf.streamlit.app)
+
+---
+
+## 🌐 Live Demo
+
+**👉 [devin-novansyah16-rag-chatbot-pdf.streamlit.app](https://devin-novansyah16-rag-chatbot-pdf.streamlit.app)**
+
+> Langsung coba tanpa install apapun! Upload PDF kamu dan mulai tanya jawab.
 
 ---
 
@@ -17,6 +26,7 @@ Aplikasi chatbot berbasis **Retrieval-Augmented Generation (RAG)** yang memungki
 - 📎 **Source Kutipan** — Setiap jawaban disertai potongan teks sumbernya
 - 🌐 **Multibahasa** — Mendukung dokumen dan pertanyaan Bahasa Indonesia
 - ⚡ **Cepat** — Menggunakan Groq (LPU) untuk inferensi super cepat
+- 🆓 **Gratis** — Tidak butuh kartu kredit, langsung bisa dipakai
 
 ---
 
@@ -33,16 +43,16 @@ FAISS Vectorstore (local)
     ↓
 User Query → Semantic Retrieval (top-4 chunks)
     ↓
-Groq LLM (llama3-8b) → Answer + Sources
+Groq LLM (llama-3.3-70b) → Answer + Sources
 ```
 
 ---
 
-## 🚀 Cara Menjalankan
+## 🚀 Cara Menjalankan Lokal
 
 ### 1. Clone & install
 ```bash
-git clone https://github.com/username/rag-chatbot-pdf.git
+git clone https://github.com/devin-novansyah16/rag-chatbot-pdf.git
 cd rag-chatbot-pdf
 pip install -r requirements.txt
 ```
@@ -52,13 +62,19 @@ pip install -r requirements.txt
 2. Buat API Key baru
 3. Copy key-nya (format: `gsk_...`)
 
-### 3. Jalankan aplikasi
+### 3. Buat file secrets
+```bash
+mkdir .streamlit
+```
+Buat file `.streamlit/secrets.toml` dan isi:
+```toml
+GROQ_API_KEY = "gsk_xxxxxxxxxxxx"
+```
+
+### 4. Jalankan aplikasi
 ```bash
 streamlit run app.py
 ```
-
-### 4. Buka browser
-Aplikasi otomatis terbuka di `http://localhost:8501`
 
 ---
 
@@ -70,10 +86,8 @@ rag-chatbot-pdf/
 ├── app.py                  # Streamlit UI utama
 ├── src/
 │   ├── rag_pipeline.py     # Core RAG: load, embed, retrieve, answer
-│   └── utils.py            # Helper: file handling
-│
-├── uploads/                # PDF yang diupload (auto-generated, di-gitignore)
-├── vectorstore/            # FAISS index (auto-generated, di-gitignore)
+│   ├── utils.py            # Helper: file handling
+│   └── __init__.py
 │
 ├── .env.example            # Template environment variable
 ├── requirements.txt
@@ -89,10 +103,11 @@ rag-chatbot-pdf/
 | UI | Streamlit | Web app framework |
 | PDF Loader | PyPDF | Ekstrak teks dari PDF |
 | Text Splitter | LangChain | Chunking dokumen |
-| Embeddings | HuggingFace (multilingual-MiniLM) | Gratis, mendukung Bahasa Indonesia |
+| Embeddings | HuggingFace (multilingual-MiniLM) | Gratis, support Bahasa Indonesia |
 | Vector Store | FAISS | Similarity search lokal |
-| LLM | Groq (llama3-8b) | Gratis, sangat cepat |
+| LLM | Groq (llama-3.3-70b) | Gratis, sangat cepat |
 | Orchestration | LangChain | RAG pipeline |
+| Deploy | Streamlit Cloud | Hosting gratis |
 
 ---
 
@@ -110,14 +125,15 @@ Setelah upload PDF, coba tanya:
 
 - [ ] Support multi-dokumen sekaligus
 - [ ] Export chat history ke PDF
-- [ ] Deploy ke Streamlit Cloud
 - [ ] Tambahkan model embedding lokal (Ollama)
+- [ ] Tambah fitur highlight teks sumber di PDF
 
 ---
 
 ## 👤 Author
 
-Dibuat sebagai project portfolio Data Science & AI.
+**Devin Novansyah**
+- GitHub: [@devin-novansyah16](https://github.com/devin-novansyah16)
 
 ---
 
