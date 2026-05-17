@@ -6,7 +6,7 @@ Aplikasi chatbot berbasis **Retrieval-Augmented Generation (RAG)** yang memungki
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red)
 ![LangChain](https://img.shields.io/badge/LangChain-0.1+-green)
 ![Groq](https://img.shields.io/badge/LLM-Groq%20(Free)-orange)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://devin-novansyah16-rag-chatbot-pdf.streamlit.app)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Demo-FF4B4B?logo=streamlit&logoColor=white)](https://devin-novansyah16-rag-chatbot-pdf.streamlit.app)
 
 ---
 
